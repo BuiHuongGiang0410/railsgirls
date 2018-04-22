@@ -7,9 +7,18 @@ ENV['RUBY_DEP_GEM_SILENCE_WARNINGS'] = '1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 # Use Puma as the app server    
 gem 'carrierwave'
+gem "mini_magick"
+gem 'devise'
+gem "byebug"
+gem 'gravtastic'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
